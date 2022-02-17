@@ -1,15 +1,19 @@
-import supertest from 'supertest';
+// import supertest from 'supertest';
 
 describe("Beach forecast funcional tests", () => {
   it("should return a forecast with just a few times", async() => {
-    // const { body, status } = await global.testRequest.get('/forecast');
-    const { body, status } = await supertest(app).get('/forecast');
+    const { body, status } = await global.testRequest.get('/forecast');
+    // const { body, status } = await supertest(app).get('/forecast');
 
     expect(status).toBe(200);
 
-    // retorno esperado pela rota de forecast, sao os dados que trazem 
-    // as infos do front
-    expect(body).toBe([{
+    // esse body é o retorno esperado pela rota de forecast, sao os dados
+    // que trazem as infos do front
+
+    // toBe espera que seja exatamente aquele elemento, como nao é o caso,
+    // estamos comparando dois objetos diferentes mas com valores iguais, 
+    // o correto é usar um comparador como toEqual
+    expect(body).toEqual([{
       "time": "2020-04-26T00:00:00+00:00",
       "forecast": [{
         "lat": -33.792726,
