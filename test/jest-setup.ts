@@ -1,8 +1,8 @@
 // responsavel por inicializar o servidor para todos os testes funcionais
 // com o beforeAll
 
-import { SetupServer } from "@src/server";
-import supertest from "supertest";
+import { SetupServer } from '@src/server';
+import supertest from 'supertest';
 
 // irá rodar antes de todos os testes da aplicacao, é o responsável por
 // iniciar o servidor de testes da aplicacao em modo de teste e isso
